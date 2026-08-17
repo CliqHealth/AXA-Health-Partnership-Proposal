@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AXA Health with CliqHealth, narrated demo (v5)</title>
+<meta name="description" content="Narrated end-to-end demo prepared for the AXA Health cancer team: a prevention member, a post-cancer recovery member, the insurer view with cost, and every capability. Under ten minutes." />
+<link rel="stylesheet" href="../css/styles.css" />
+<link rel="stylesheet" href="../css/v3.css" />
+<link rel="stylesheet" href="../css/v5.css" />
+<link rel="stylesheet" href="css/video5.css" />
+</head>
+<body class="v3">
+
+<!-- ============================== POSTER ============================== -->
+<div class="a-poster" id="aPoster">
+  <div class="a-poster-in">
+    <div class="a-lock"><b>AXA</b> Health with CliqHealth</div>
+    <h1>Two AXA members, your own portal,<br />and a partnership we could <em>start on Monday</em>.</h1>
+    <p>
+      One member who does not have cancer. One who has just finished treatment. Then your side of the glass, with
+      eight role based views, the claims picture and the day ninety gate. Ninety days from a yes to real data on
+      your own members, and nothing to pay before the gate.
+    </p>
+    <button class="a-bigplay" id="aBigPlay" aria-label="Play the narrated demo"></button>
+    <p class="a-poster-meta" id="posterMeta">&nbsp;</p>
+    <p class="a-poster-voice">
+      Narrated out loud, one line at a time, and the reel waits for each sentence to finish.
+      <button class="a-test" id="aTest">Test the voice first</button>
+    </p>
+    <p class="a-poster-voice" id="aPosterVoice"></p>
+    <p class="a-poster-keys">Space to pause, M to mute, F for fullscreen, arrows to step.</p>
+    <p class="a-poster-note">
+      Pilot ready. AXA branded from day one, your members, your data, your evidence. Figures on screen are
+      illustrative pilot projections.
+    </p>
+  </div>
+</div>
+
+<!-- ============================== APP ============================== -->
+<div class="a-app">
+
+  <header class="a-top">
+    <span class="a-mark">AXA<i></i></span>
+    <span class="a-for" id="aFor"></span>
+    <span class="a-title" id="aTitle"></span>
+    <span class="a-pill"><i></i><span id="aStatus"></span></span>
+    <button class="a-fs" id="aFs">Fullscreen</button>
+  </header>
+
+  <section class="a-stage" id="aStage">
+
+    <aside class="a-rail" id="aRail" aria-label="Running order"></aside>
+
+    <!-- the member handset, scaled to the window so it is never cropped -->
+    <div class="a-phone-col" id="aPhoneCol">
+      <div class="a-fit">
+        <div class="a-phone">
+          <span class="a-glow" id="aGlow"></span>
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-status">
+              <span id="aPhoneTime">09:41</span>
+              <span class="ph-icons"><i></i><i></i><i></i></span>
+            </div>
+            <div class="phone-screen" id="aScreen"></div>
+            <div class="phone-home"></div>
+          </div>
+          <span class="a-tap" id="aTap"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- narration and the AXA data view -->
+    <div class="a-right" id="aRightCol">
+      <div class="a-narr" id="aNarr"></div>
+      <div class="a-kpis">
+        <div class="a-kpi"><b id="kEv">0</b><span>Data points captured</span></div>
+        <div class="a-kpi"><b id="kKpi">0</b><span>KPI feeds</span></div>
+        <div class="a-kpi"><b id="kEsc">0</b><span>Human escalations</span></div>
+        <div class="a-kpi"><b id="kGbp">&pound;0</b><span>Illustrative claims effect</span></div>
+      </div>
+      <div class="a-side" id="aSide"></div>
+    </div>
+
+    <!-- wide modes: insurer, toolkit, cards. Narration sits above them. -->
+    <div class="a-lapcol" id="aLapCol" style="display:none;grid-column:2/-1">
+      <div class="a-narr" id="aNarrWide"></div>
+      <div class="a-read"><b id="aReadRole"></b><span id="aReadTxt"></span></div>
+      <div class="a-kpis">
+        <div class="a-kpi"><b id="kEvW">0</b><span>Data points captured</span></div>
+        <div class="a-kpi"><b id="kKpiW">0</b><span>KPI feeds</span></div>
+        <div class="a-kpi"><b id="kEscW">0</b><span>Human escalations</span></div>
+        <div class="a-kpi"><b id="kGbpW">&pound;0</b><span>Illustrative claims effect</span></div>
+      </div>
+      <div class="a-lap" id="aLap">
+        <div class="portal" id="aPortal">
+          <div class="portal-chrome">
+            <div class="pc-dots"><i></i><i></i><i></i></div>
+            <div class="pc-url"><span class="lock"></span>pilots.axahealth.cliqhealth.io / <b id="pcCrumb">executive</b></div>
+            <div class="pc-user" id="pcUser"></div>
+          </div>
+          <div class="portal-body">
+            <nav class="portal-side" id="roleNav" aria-label="Roles"></nav>
+            <div class="portal-main" id="portalMain"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-gridcol" id="aGridCol" style="display:none;grid-column:2/-1">
+      <div id="aGrid"></div>
+    </div>
+
+    <div class="a-cardcol" id="aCardCol" style="display:none;grid-column:2/-1"></div>
+
+  </section>
+
+  <footer class="a-bar">
+    <div class="a-track" id="aTrack">
+      <div class="a-line"><i class="a-fill" id="aFill"></i></div>
+      <div id="aSegs"></div>
+      <i class="a-head" id="aHead" style="left:0"></i>
+    </div>
+    <div class="a-ctrls">
+      <button class="a-btn" id="aPrev" aria-label="Previous scene"></button>
+      <button class="a-btn play" id="aPlay" aria-label="Play"></button>
+      <button class="a-btn" id="aNext" aria-label="Next scene"></button>
+      <button class="a-btn" id="aRestart" aria-label="Restart"></button>
+      <span class="a-time" id="aTime">00:00 / 00:00</span>
+      <span class="a-scene" id="aScene"></span>
+      <span class="a-voicenote" id="aVoiceNote" style="display:none"></span>
+      <div class="a-rightctl">
+        <button class="a-chip" id="aMute">Audio on</button>
+        <button class="a-chip" id="aSpeed">1&times;</button>
+        <button class="a-chip" data-jump="prevent">Prevention</button>
+        <button class="a-chip" data-jump="recover">Recovery</button>
+        <button class="a-chip" data-jump="insurer">Insurer</button>
+        <button class="a-chip" data-jump="platform">Toolkit</button>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/v3-data.js"></script>
+<script src="../js/v4-data.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/portal.js"></script>
+<script src="../js/portal-v3.js"></script>
+<script src="js/script5.js"></script>
+<script src="js/audio5.js"></script>
+<script src="js/extras5.js"></script>
+<script src="js/player5.js"></script>
+</body>
+</html>
